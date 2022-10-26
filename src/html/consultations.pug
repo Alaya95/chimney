@@ -1,0 +1,17 @@
+section.consultation
+    div.consultation__header 
+        h2.consultation__title необходима консультация
+        span.consultation__subtitle оставьте заявку или свяжитесь с нами в социальных сетях
+    div.consultation__icons 
+        include ./social.pug
+        
+    div.consultation__form.form 
+        p.form__title Для 
+            span консультации
+            |заполните форму!
+        p.form__text И с Вами свяжутся в ближайшее время
+
+        form(action="#", class="form__contacts")
+            input(type="text", name="name", id="name", placeholder="Ваше имя").form__field
+            input(type="tel", name="phone", id="phone", placeholder="Ваш телефон").form__field
+            btn.form__btn оставить заявку
