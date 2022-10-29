@@ -1,0 +1,86 @@
+@import "../scss/mixins.scss";
+@import "../scss/helpers";
+
+.process {
+  @include flex(column, flex-start, flex-start);
+  position: relative;
+  margin-bottom: 10px;
+
+  &::after,
+  &::before {
+    position: absolute;
+    content: url(../img/Rectangle.svg);
+  }
+  &::after {
+    bottom: 10px;
+  }
+  &::before {
+    top: -10px;
+    margin-bottom: 10px;
+  }
+  .process__rectangle {
+    margin: 0 0 12px 5px;
+  }
+
+  &__title {
+    @include font(20px, 600, start);
+    color: var(--black);
+    margin-bottom: 20px;
+  }
+  &__list {
+    // @include font(14px, 40, start);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+    list-style-type: none;
+    margin: 10px;
+  }
+
+  &__item {
+    @include flex(row, flex-start, flex-start);
+    margin-bottom: 20px;
+
+    & span {
+      @include font(50px, 700, center);
+      display: block;
+      width: 40px;
+      flex: none;
+
+      line-height: 61px;
+      margin-right: 20px;
+      color: rgba(227, 62, 84, 0.4);
+    }
+  }
+}
+
+@media screen and ($medium) {
+  .process {
+    margin-bottom: 50px;
+
+    &::after {
+      bottom: -10px;
+    }
+    &__list {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      grid-auto-flow: column;
+    }
+
+    &__item {
+      grid-area: span 1 / span 1;
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media screen and ($large) {
+  .process {
+    margin-bottom: 100px;
+
+    &__list {
+      font-size: 16px;
+    }
+  }
+}

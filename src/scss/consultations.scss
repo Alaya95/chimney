@@ -1,0 +1,119 @@
+@import "../scss/helpers.scss";
+
+.consultation {
+  position: relative;
+  margin-bottom: 10%;
+
+  &::after {
+    position: absolute;
+    content: url(../img/Rectangle.svg);
+    bottom: 0;
+  }
+  &__header {
+    @include flex(column, center, center);
+    margin-bottom: 20px;
+  }
+
+  &__title,
+  &__subtitle {
+    text-align: center;
+  }
+  &__title {
+    @include font(22px, 800, center);
+    line-height: 30px;
+    text-transform: uppercase;
+  }
+  &__subtitle {
+    @include font(14px, 400, center);
+    line-height: 26px;
+  }
+
+  &__icons {
+    @include flex(row, center, center);
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  &__form {
+    margin-bottom: 48px;
+  }
+}
+
+.form {
+  &__title {
+    @include font(18px, 500, center);
+    line-height: 26px;
+
+    & span {
+      color: #ea6628;
+    }
+  }
+  &__text {
+    @include font(14px, 400, center);
+    line-height: 25px;
+    margin-bottom: 25px;
+  }
+
+  &__contacts {
+    @include flex(column, center, center);
+  }
+  &__field {
+    @include font(14px, 500, start);
+    line-height: 22px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 17px;
+    margin-bottom: 15px;
+    width: 100%;
+    color: #b1b1b1;
+  }
+
+  &__btn {
+    @include font(16px, 700, center);
+    line-height: 20px;
+    background: #215359;
+    border-radius: 4px;
+    width: 100%;
+    padding: 17px;
+    color: #ffffff;
+    margin-bottom: 48px;
+  }
+}
+
+@media screen and ($medium) {
+  .consultation {
+    margin: 0 auto 70px auto;
+    min-width: 600px;
+    max-width: 90%;
+    padding: 50px;
+    background: #ffffff;
+    box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.15);
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+@media screen and ($large) {
+  .consultation {
+    margin: 0 auto 120px auto;
+    min-width: 800px;
+    max-width: 80%;
+    padding: 60px;
+
+    &__form .form {
+      &__contacts {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+      &__field {
+        margin-right: 16px;
+      }
+      &__field,
+      &__btn {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

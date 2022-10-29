@@ -1,0 +1,28 @@
+header.header
+    a.header__logo.logo(href="#") 
+    div.header__content     
+        form(action="#").header__search.search
+            input#search.search__field
+            include ../svgIcons/search.svg
+        button.header__btn.header__btn-heart.circle
+            include ../svgIcons/heart.svg
+        a.header__btn.circle(href="#") 
+            include ../svgIcons/basket.svg
+
+        div.header__burger 
+            button.header__btn.circle#burger-btn
+                include ../svgIcons/burger_menu.svg
+            nav.header__nav.nav.dropdown#burger-dropdown
+                ul.nav__list
+                    li.nav__item
+                        a(href="#").nav__link Каталог товаров
+                    li.nav__item
+                        a(href="#").nav__link Доставка и оплата
+                    li.nav__item
+                        a(href="#").nav__link Цены
+                    li.nav__item
+                        a(href="#").nav__link Контакты
+                a(href="tel:+7 (812) 509 21 98").nav__link +7 (812) 5021 98
+                a(href="#").nav__link.nav__link-call Перезвоните мне
+
+                include social
