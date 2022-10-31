@@ -10,6 +10,7 @@ async function lottery() {
     console.log("Вам заплатили");
   } catch (error) {
     console.log(error);
+    console.log("Вы проиграли");
   } finally {
     console.log("Игра закончена");
   }
